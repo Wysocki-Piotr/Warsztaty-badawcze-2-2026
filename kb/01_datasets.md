@@ -69,15 +69,157 @@
 
 ### Cub-200
 
-**Link**: [The Caltech-UCSD Birds-200-2011 Dataset](https://authors.library.caltech.edu/27452/1/CUB_200_2011.pdf) (*Note: direct link to the pdf download*)
+**Article link**: [The Caltech-UCSD Birds-200-2011 Dataset](https://authors.library.caltech.edu/27452/1/CUB_200_2011.pdf) (*direct link to the pdf download*); it is an extension of a previously published dataset, which can be found under this link: [Caltech-UCSD Birds 200](https://authors.library.caltech.edu/records/cyyh7-dkg06)
+
+**Dataset link**: [raw files](https://data.caltech.edu/records/65de6-vp158) or [kaggle, with file content preview](https://www.kaggle.com/datasets/wenewone/cub2002011/data)
+
+**Short Description**: The dataset contains images of birds labelled by species, annotated with bounding boxes, part locations (where in the picture are various bird body parts), and attribute labels (e.g. beak shape, color, etc.). The dataset seems quite popular, with over 5700 citations on its expanded version (which is the one linked above); its authors recommend it mostly for multi-class object detection. 
+
+**Volume metrics**: 
+- number of images: 11,788; 
+- number of attributes: 28 per image (each with multiple options, in total 312 binary attributes);
+- number of bird species: 200; the classes are reasonably well-balanced, with 40-60 images in each class. 
+
+**Attributes**: There are 28 attributes, each with a fixed set of possible values: 
+| Attribute | Values |
+| :--- | :--- |
+| **Bill shape**       | cone, all-purpose, dagger, hooked seabird, hooked, curved (up or down), spatulate, needle, specialized |
+| **Wing Color**       | blue, black, orange, buff, brown, grey, white, red, pink, rufous, yellow, olive, purple, green, iridescent |
+| **Upperparts Color** | blue, black, orange, buff, brown, grey, white, red, pink, rufous, yellow, olive, purple, green, iridescent |
+| **Underparts Color** | blue, black, orange, buff, brown, grey, white, red, pink, rufous, yellow, olive, purple, green, iridescent |
+| **Breast Pattern**   | solid, striped, spotted, multi-colored |
+| **Back color**       | blue, black, orange, buff, brown, grey, white, red, pink, rufous, yellow, olive, purple, green, iridescent |
+| **Tail shape**       | forked tail, rounded tail, notched tail, fan-shaped tail, pointed tail, squared tail |
+| **Upper tail color** | blue, black, orange, buff, brown, grey, white, red, pink, rufous, yellow, olive, purple, green, iridescent |
+| **Head Pattern**     | malar, eyebrow, capped, eyering, unique pattern, striped, spotted, crested, masked, plain, eyeline |
+| **Breast Color**     | blue, black, orange, buff, brown, grey, white, red, pink, rufous, yellow, olive, purple, green, iridescent |
+| **Throat Color**     | blue, black, orange, buff, brown, grey, white, red, pink, rufous, yellow, olive, purple, green, iridescent |
+| **Eye color**        | blue, black, orange, buff, brown, grey, white, red, pink, rufous, yellow, olive, purple, green |
+| **Bill length**      | shorter than head, about the same as head, longer than head |
+| **Forehead Color**   | blue, black, orange, buff, brown, grey, white, red, pink, rufous, yellow, olive, purple, green, iridescent |
+| **Under tail color** | blue, black, orange, buff, brown, grey, white, red, pink, rufous, yellow, olive, purple, green, iridescent |
+| **Nape color**       | blue, black, orange, buff, brown, grey, white, red, pink, rufous, yellow, olive, purple, green, iridescent |
+| **Belly color**      | blue, black, orange, buff, brown, grey, white, red, pink, rufous, yellow, olive, purple, green, iridescent |
+| **Wing shape**       | pointed-wings, tapered-wings, long-wings, rounded-wings, broad-wings |
+| **Size**             | small (5-9 in), very small (3-5 in), medium (9-16 in), very large (32-72 in), large (16-32 in) |
+| **Shape**            | perching-like, tree-clinging-like, gull-like, duck-like, swallow-like, upright-perching water-like, sandpiper-like, upland-ground-like, chicken-like-marsh, pigeon-like, long-legged-like, hummingbird-like, hawk-like, owl-like |
+| **Back pattern**     | solid, striped, spotted, multi-colored |
+| **Tail pattern**     | solid, striped, spotted, multi-colored |
+| **Belly Pattern**    | solid, striped, spotted, multi-colored |
+| **Primary Color**    | blue, black, orange, buff, brown, grey, white, red, pink, rufous, yellow, olive, purple, green, iridescent |
+| **Leg color**        | blue, black, orange, buff, brown, grey, white, red, pink, rufous, yellow, olive, purple, green, iridescent |
+| **Bill color**       | blue, black, orange, buff, brown, grey, white, red, pink, rufous, yellow, olive, purple, green, iridescent |
+| **Crown color**      | blue, black, orange, buff, brown, grey, white, red, pink, rufous, yellow, olive, purple, green, iridescent |
+| **Wing Pattern**     | solid, striped, spotted, multi-colored |
+
+All of the above attributes are represented as a set of multiple binary attributes, of which there is 312 in total. Each of the attributes is connected with a specific body part that it applies to, according to a table below: 
+| Body Part | Attributes |
+| :--- | :--- |
+| **Beak**             | bill shape, bill color, bill length |
+| **Belly**            | belly pattern, belly color |
+| **Throat**           | throat color |
+| **Crown**            | crown color |
+| **Tail**             | upper tail color, under tail color, tail pattern, tail shape |
+| **Back**             | back color, back pattern |
+| **Forehead**         | forehead color |
+| **Nape**             | nape color |
+| **Eye**              | eye color |
+| **Wing**             | wing pattern, wing color, wing shape |
+| **Breast**           | breast pattern, breast color |
+| **Bird (all parts)** | size, shape |
+| **Head**             | head pattern |
+| **Leg**              | leg color |
+| **Body**             | underparts color, upperparts color, primary color |
+
+The complete list of body parts contains: back, beak, belly, breast, crown, forehead, left eye, left leg, left wing, nape, right eye, right leg, right wing, tail, throat. Each picture is annotated with the pixel location and visibility of all the body parts. 
+
+**Example Images**: 
+| Yellow Headed Blackbird | Bobolink | Red Faced Cormorant | Indigo Bunting |
+| :--- | :--- | :--- | :--- |
+| ![Yellow Headed Blackbird](image-2.png) | ![Bobolink](image-1.png) | ![Red Faced Cormorant](image-3.png) | ![Indigo Bunting](image-4.png) |
+
+**Relevance**: Concepts are well-labelled, so the dataset should be pretty reliable for all concept detection tasks. They're also quite human-readable, since they're all based on objective visual traits such as color or shape. Moreover, it's easy to isolate images containing a particular concept (to later use for CAV computation). 
+
+**Data Gathering & Labelling Methodology**: The data for different species was initially gathered by collecting all images from the Wikipedia site for this species; then, additional images were found through Flickr image search using the Wikipedia pictures as reference. Later, they were filtered and annotated by thousands of workers through Amazon Mechanical Turk website. Multiple workers' responses for the same image were compared against one another to create a single, coherent final label. As a result of this methodology, one should be cautious when using the dataset with pre-trained models, as many of them might have also been trained on the same Flickr images. 
+
+**Known issues**: 
+- Images returned by a Flickr query are often a result of one photographer taking many images of the same bird in a very short period of time, so the dataset often contains multiple near-identical images of a given bird. This causes issues with the train-test split: if some of these images are part of the training set, and some are in the test set, this results in a sort of data leakage (nearly identical pictures in training and test set). Thus, it is strongly recommended that we use the train-test split proposed by the authors, which intentionally avoids this issue. 
+- There are some spurious correlations between the bird features and the type of background in the pictures - e.g. water birds often appear with a blue water background, while land birds are more often photographed against grass or leaves. Thus, classification models often learn the background instead of the actual bird; this phenomenon was studied by researchers who created the Waterbirds dataset, which artificially changes the background on some pictures to one that's unusual for its bird species ([Sagawa et al., "Distributionally Robust Neural Networks for Group Shifts: On the Importance of Regularization for Worst-Case Generalization"](https://arxiv.org/pdf/1911.08731)). 
+- Similarly as above, there are also correlations between species and the pose/placement of the bird in the picture (e.g. birds that are easily scared are more often photographed from a distance), which also causes some biases in models ([Branson et al., "Bird Species Categorization Using Pose Normalized Deep Convolutional Nets"](https://arxiv.org/pdf/1406.2952)). 
+
+**Related Literature**: 
+- [Koh et al., "Concept Bottleneck Models"](https://arxiv.org/pdf/2007.04612): Uses CUB-200 dataset to train bottleneck models, ie. models which first train a model to predict some concepts (e.g. "wing color") and then predicting the label based only on these concepts, which allows for high explainability and possible model correction based on the mistakes at concept level. 
+- [Jaderberg et al., "Spatial Transformer Networks"](https://arxiv.org/pdf/1506.02025): Introduces a Spacial Transformer module, which can be inserted into a neural network architecture and taught to transform the data in the network (so that it becomes invariant to translation, scale, rotation, and more generic warping); it uses CUB-200 to test its performance. 
 
 ### FunnyBirds
 
-*Note: This is a particularly interesting dataset for us, as it allows us to generate any relation between concepts synthetically*.
-
 **Link**: [FunnyBirds: A Synthetic Vision Dataset for a Part-Based Analysis of Explainable AI Methods](https://openaccess.thecvf.com/content/ICCV2023/html/Hesse_FunnyBirds_A_Synthetic_Vision_Dataset_for_a_Part-Based_Analysis_of_ICCV_2023_paper.html)
 
-### ISIC 
+FunnyBirds is a **synthetic computer vision dataset** designed specifically for the evaluation of explainable AI methods. The dataset contains artificially generated bird species composed of several **semantic parts - concepts** such as beaks, wings, eyes, feet, and tails. Each bird class is a unique combination of these parts.
+Unlike most real-world datasets, FunnyBirds allows **controlled semantic interventions**, such as removing individual parts of an object, which enables the estimation of the **true importance of each concept** for model predictions. This makes the dataset particularly suitable for studying **concept-based explanations and the faithfulness of XAI methods**.
+
+
+#### Volume metrics
+
+- **Number of images**: 50 500  
+- **Training images**: 50 000  
+- **Test images**: 500  
+- **Number of classes**: 50 synthetic bird species  
+- **Number of concepts**: 5 parts per image  
+
+
+#### Concepts available
+
+Each image contains the following **five parts**: beak, wings, eyes, feet and tail. 
+Each concept has multiple variants:
+
+- **4 beak types**
+- **3 eye types**
+- **4 feet types**
+- **9 tail types**
+- **6 wing types**
+
+These variants are **created manually using fixed geometric shapes and colors**. This makes each element clear and easy to distinguish, with a well-defined meaning.
+
+Bird classes are created by **combining these predefined concept variants**, resulting in a large space of possible bird configurations. From the total **2 592 possible combinations**, **50 classes are randomly sampled** to build the final dataset.
+
+#### Why is it relevant?
+
+FunnyBirds is useful for concept-based explainability research because:
+
+- the concepts represent parts of an object that people can easily understand
+- you can change or remove parts (for example, remove a beak)
+- it is possible to know how important each concept really is
+- the data is fully controlled during creation
+- it avoids many problems that occur in real-world datasets
+
+**Hypotheses to be evaluated:**
+
+- Do XAI methods correctly identify which object parts are truly important?
+- Can explanations correctly rank how important each part is (e.g., beak vs wings)?
+- Do different neural network types produce different quality explanations?
+
+#### Known limitations
+
+1. The dataset is synthetic, so it does not include all the complexity of real-world images.
+2. The objects are simple and have only five concepts, which limits variety.
+3. Models trained on FunnyBirds may not work as well on real-world data.
+
+However, these limitations are intentional, since the goal is to create a **controlled environment for analyzing explainability methods**.
+
+#### Related papers
+https://arxiv.org/abs/2406.10025 - 
+ProtoS-ViT: Visual foundation models for sparse self-explainable classifications
+
+This work introduces a vision transformer model that can explain its own predictions using interpretable concepts. It is related to FunnyBirds because the dataset allows testing whether the model correctly identifies which object parts are important for its decisions.
+
+
+https://arxiv.org/abs/2202.03482 - 
+Navigating Neural Space: Revisiting Concept Activation Vectors to Overcome Directional Divergence
+
+This paper analyzes CAVs and shows that they can incorrectly capture unrelated features instead of true concepts. FunnyBirds is particularly useful in this context, as its controlled design allows verifying whether CAV methods correctly identify the importance of specific object parts.
+
+### ISIC
 **Link**: [Skin lesion analysis toward melanoma detection: A challenge at the 2017 International symposium on biomedical imaging (ISBI), hosted by the international skin imaging collaboration (ISIC)](https://ieeexplore.ieee.org/abstract/document/8363547)
  
 **Short Description**:
@@ -134,6 +276,46 @@ The 2017 challenge was structured into three distinct tasks, designed to mimic a
 ### ImageNet + WordNet
 
 *Note: When used like in [this paper](https://arxiv.org/pdf/2602.11448)*
+
+### ImageNet - content
+
+**Link**: [ImageNet: A Large-Scale Hierarchical Image Database](https://ieeexplore.ieee.org/document/5206848) and the [Official ImageNet Website](https://www.image-net.org/).
+
+![Sample images from ImageNet](https://viso.ai/wp-content/uploads/2024/04/ImageNet.jpg)
+*Sample images from ImageNet, sourced from viso.ai.*
+
+**Impact**: As of March 2026, the foundational 2009 paper has recorded **93,041 citations** on Google Scholar. The project represents a fundamental shift in AI research, famously summarized by its creator, Fei-Fei Li: 
+> *"The paradigm shift of the ImageNet thinking is that while a lot of people are paying attention to models, let’s pay attention to data. Data will redefine how we think about models."*
+
+It established the **ILSVRC** (ImageNet Large Scale Visual Recognition Challenge), which served as the definitive benchmark for deep learning progress between 2010 and 2017.
+
+**Short Description**: ImageNet is a large-scale visual ontology based on the **WordNet** lexical structure. It was designed to map the physical world into a structured digital format by associating objects with a hierarchical network of concepts . It pioneered a "data-centric" paradigm, demonstrating that massive scale and taxonomical diversity are essential for developing robust and generalizable visual recognition systems.
+
+**Metrics**: 
+* **Total Volume**: 14,197,122 images categorized into 21,841 distinct synsets.
+* **ILSVRC Subset**: The most widely used version for model training, focusing on 1,000 selected categories and containing 1,431,167 images
+* **Verification**: To remove irrelevant images from a pool of over 160 million candidates, labels were manually verified by over 50,000 workers via Amazon Mechanical Turk.
+
+**Concepts**: 
+The dataset is structured using **Synsets** (Sets of Synonyms) from WordNet:
+* **Semantic Precision**: Instead of using ambiguous keywords, ImageNet groups synonymous terms into a single synset (e.g., "dog" and "Canis familiaris"). This resolves polysemy, distinguishing between different meanings of the same word, such as "bank" as a financial institution vs. a river bank.
+* **Taxonomical Hierarchy**: Concepts are linked via **hypernymy** (is-a relationships). A "Siberian Husky" is nested under "Working Dog," which is under "Dog," and eventually "Mammal." This structure allows for evaluating models based on their hierarchical understanding of categories.
+
+**Relevance**: 
+In the context of concept detection and Explainable AI:
+1. **Feature Extraction Baseline**: Most models used for Concept Activation Vectors (CAVs) are pre-trained on ImageNet. Their internal "understanding" of visual concepts is fundamentally shaped by the distribution of these 1,000 categories.
+2. **Semantic Error Analysis**: The hierarchy enables the measurement of "semantic distance" - identifying if a model's failure is a fine-grained misclassification (e.g., two similar dog breeds) or a catastrophic semantic error (e.g., mistaking an animal for a vehicle).
+
+**Known biases**:
+
+1. **Geographic and Cultural Skew**: The dataset is heavily biased toward Western, high-income perspectives. Models trained on ImageNet often fail to recognize common objects when they appear in non-Western cultural contexts, such as traditional wedding attire or regional tools. ([link to paper](https://openaccess.thecvf.com/content_CVPRW_2019/html/cv4gc/de_Vries_Does_Object_Recognition_Work_for_Everyone_CVPRW_2019_paper.html))
+2. **ImageNet Roulette and The Person Subtree**:
+The "person" subtree inherited a stagnant WordNet ontology of 2,832 categories, including derogatory and non-visual labels . Due to the low imageability of abstract concepts, models were forced to perform "automated phrenology" by linking physical appearance to social or moral traits . A comprehensive audit removed 1,593 unsafe synsets (600,040 images) and 1,081 non-imageable categories (443,547 images). ([link to paper](https://dl.acm.org/doi/10.1145/3351095.3375709))
+
+**Related Literature**:
+
+* **AlexNet (2012)**: The pivotal architecture that utilized ImageNet to prove the superiority of Convolutional Neural Networks over traditional feature engineering ([link to paper](https://proceedings.neurips.cc/paper/2012/hash/c399862d3b9d6b76c8436e924a68c45b-Abstract.html)).
+* **ResNet (2016)**: Introduced Residual Learning, enabling the training of networks with over 100 layers on ImageNet ([link to paper](https://openaccess.thecvf.com/content_cvpr_2016/html/He_Deep_Residual_Learning_CVPR_2016_paper.html)).
 
 ## With one concept
 
